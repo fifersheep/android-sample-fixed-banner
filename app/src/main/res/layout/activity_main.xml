@@ -26,12 +26,11 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
+        <uk.lobsterdoodle.sample.fixedscrollingtablayoutbanner.BannerView
             android:id="@+id/static_header"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="top"
-            android:text="Some static scrolling header"/>
+            android:layout_gravity="top"/>
 
     </android.support.v4.view.ViewPager>
 

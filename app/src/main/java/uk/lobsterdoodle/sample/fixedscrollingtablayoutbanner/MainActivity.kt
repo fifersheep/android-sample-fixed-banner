@@ -1,18 +1,18 @@
 package uk.lobsterdoodle.sample.fixedscrollingtablayoutbanner
 
 import android.annotation.SuppressLint
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.design.widget.TabLayout
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentPagerAdapter
 import android.support.v4.view.ViewPager
+import android.support.v7.app.AppCompatActivity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.*
-import java.util.Arrays.asList
+import android.widget.ArrayAdapter
+import android.widget.ListView
 
 @SuppressLint("SetTextI18n")
 class MainActivity : AppCompatActivity() {
@@ -41,8 +41,8 @@ class MainActivity : AppCompatActivity() {
     class CustomFragment : Fragment() {
         private lateinit var adapter: ArrayAdapter<String>
 
-        override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-            val view = inflater!!.inflate(R.layout.fragment_sample, container, false)
+        override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+            val view = inflater.inflate(R.layout.fragment_sample, container, false)
             adapter = ArrayAdapter(context, R.layout.my_list_item, (1..20).map { "${arguments.get("header")}: Item #$it" })
             view.findViewById<ListView>(R.id.list_view).adapter = adapter
             return view
